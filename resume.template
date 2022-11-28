@@ -8,9 +8,9 @@
     <title>Resume of {{basics.name}}</title>
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
-    <style type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" media="all">
+    <style type="text/css" media="all">
     {{{css}}}
     </style>
     <style type="text/css" media="print">
@@ -19,310 +19,150 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="photo-header" class="text-center">
-            <!-- PHOTO (AVATAR) -->
-            {{#photo}}
-            <div id="photo">
-              <img src="{{photo}}" alt="avatar">
-            </div>
-            {{/photo}}
-            <div id="text-header" {{^photo}}style="margin-top: 90px;"{{/photo}}>
-              <h1>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-7">
+      <div class="d-flex gap">
+        <div>
           {{#basics.summary}}
           <!-- ABOUT ME -->
           <div class="box">
             <h2><i class="fas fa-user ico"></i> About</h2>
+            <div id="text-header">
+              <h3>{{basics.name}}<br>{{#basics.label}}<span>{{basics.label}}</span>{{/basics.label}}</h3>
+            </div>
             <p>{{{basics.summary}}}</p>
           </div>
           {{/basics.summary}}
-          {{#workBool}}
-          <!-- WORK EXPERIENCE -->
-          <div class="box">
-            <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
-            {{#work}}
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">
-                      {{name}}
-                      {{#location}}
-                      <div class="pull-right">
-                        {{location}}
-                      </div>
-                      {{/location}}
-                    </div>
-                    {{#description}}
-                    <div class="description">
-                      {{description}}
-                    </div>
-                    {{/description}}
-                    {{#url}}
-                    <div class="address">
-                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
-                    </div>
-                    {{/url}}
-                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
-                    <div class="description">
-                      {{{summary}}}
-                      {{#boolHighlights}}
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        {{#highlights}}
-                        <li class="list-group-item">{{{.}}}</li>
-                        {{/highlights}}
-                      </ul>
-                      {{/boolHighlights}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {{/work}}
-          </div>
-          {{/workBool}}
-          {{#awardsBool}}
-          <!-- AWARDS -->
-          <div class="box">
-            <h2><i class="fas fa-certificate ico"></i> Awards</h2>
-            <ul id="awards" class="clearfix">
-              {{#awards}}
-              <li>
-                <div class="year pull-left">{{month}} {{year}}</div>
-                <div class="description pull-right">
-                  <h3>{{awarder}}</h3>
-                  <p><i class="fas fa-trophy ico"></i> {{title}}</p>
-                  <p>{{{summary}}}</p>
-                </div>
-              </li>
-              {{/awards}}
-            </ul>
-          </div>
-          {{/awardsBool}}
-          {{#volunteerBool}}
-          <!-- VOLUNTEER -->
-          <div class="box">
-            <h2><i class= "fas fa-users ico"></i> Volunteer</h2>
-            {{#volunteer}}
-              <div class="job clearfix">
-                <div class="row">
-                  <div class="details">
-                    <div class="where">{{organization}}</div>
-                    {{#url}}
-                    <div class="address">
-                      <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
-                    </div>
-                    {{/url}}
-                    <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="job-details col-xs-11">
-                    <div class="profession">{{position}}</div>
-                    <div class="description">
-                      {{{summary}}}
-                      {{#boolHighlights}}
-                      <div class="highlights">Highlights</div>
-                      <ul class="list-group">
-                        {{#highlights}}
-                        <li class="list-group-item">{{{.}}}</li>
-                        {{/highlights}}
-                      </ul>
-                      {{/boolHighlights}}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {{/volunteer}}
-          </div>
-          {{/volunteerBool}}
-          {{#projectsBool}}
-          <!-- PROJECTS -->
-          <div class="box">
-            <h2><i class= "fas fa-code-branch ico"></i> Projects</h2>
-            <ul class="list-group">
-              {{#projects}}
-              <li class="list-group-item">
-                <span style="font-weight:bold">{{name}}</span>: {{description}}
-              </li>
-              {{/projects}}
-            </ul>
-          </div>
-          {{/projectsBool}}
         </div>
-        <div class="col-xs-12 col-sm-5">
+
+        <div>
           <!-- CONTACT -->
-          <div class="box clearfix">
+          <div class="box clearfix d-flex flex-column">
             <h2><i class="fas fa-bullseye ico"></i> Contact</h2>
             {{#basics.location}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fas fa-map-marker fa-fw"></span></div>
-              {{#basics.location.address}}<div class="title pull-right">{{basics.location.address}}</div>{{/basics.location.address}}
-              <div class="title {{^basics.location.address}}only {{/basics.location.address}} pull-right">{{basics.location.city}}{{#basics.location.region}}, {{basics.location.region}}{{/basics.location.region}}{{#basics.location.postalCode}} {{basics.location.postalCode}}{{/basics.location.postalCode}}{{#basics.location.countryCode}} {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
+            <div class="contact-item gap d-flex">
+              <div class="icon float-start text-center"><span class="fas fa-map-marker fa-fw"></span></div>
+              {{#basics.location.address}}<div class="title float-end">{{basics.location.address}}</div>{{/basics.location.address}}
+              <div class="title {{^basics.location.address}}only {{/basics.location.address}} float-end">{{basics.location.city}}{{#basics.location.region}}, {{basics.location.region}}{{/basics.location.region}}{{#basics.location.postalCode}} {{basics.location.postalCode}}{{/basics.location.postalCode}}{{#basics.location.countryCode}} {{basics.location.countryCode}}{{/basics.location.countryCode}}</div>
             </div>
             {{/basics.location}}
             {{#basics.phone}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fas fa-phone fa-fw"></span></div>
-              <div class="title only pull-right">{{basics.phone}}</div>
+            <div class="contact-item gap d-flex">
+              <div class="icon float-start text-center"><span class="fas fa-phone fa-fw"></span></div>
+              <div class="title only float-end">{{basics.phone}}</div>
             </div>
             {{/basics.phone}}
             {{#basics.email}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fas fa-envelope fa-fw"></span></div>
-              <div class="title only pull-right"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
+            <div class="contact-item gap d-flex">
+              <div class="icon float-start text-center"><span class="fas fa-envelope fa-fw"></span></div>
+              <div class="title only float-end"><a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a></div>
             </div>
             {{/basics.email}}
             {{#basics.url}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
-              <div class="title only pull-right"><a href="{{basics.url}}" target="_blank">{{basics.url}}</a></div>
+            <div class="contact-item gap d-flex">
+              <div class="icon float-start text-center"><span class="fas fa-globe fa-fw"></span></div>
+              <div class="title only float-end"><a href="{{basics.url}}" target="_blank">{{basics.url}}</a></div>
             </div>
             {{/basics.url}}
             {{#basics.profiles}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
-              <div class="title pull-right">{{network}}</div>
-              <div class="description pull-right"><a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{url}}{{/username}}</a></div>
+            <div class="contact-item gap d-flex">
+              <div class="icon float-start text-center"><span class="{{iconClass}} fa-fw"></span></div>
+              <div class="d-flex flex-column">
+                <div class="title float-end">{{network}}</div>
+                <div class="description float-end"><a href="{{url}}" target="_blank">{{#username}}{{username}}{{/username}}{{^username}}{{url}}{{/username}}</a></div>
+              </div>
             </div>
             {{/basics.profiles}}
           </div>
-          {{#educationBool}}
-          <!-- EDUCATION -->
-          <div class="box">
-            <h2><i class="fas fa-university ico"></i> Education</h2>
-            <ul id="education" class="clearfix">
-              {{#education}}
-              <li>
-                <div class="year pull-left">{{startDateYear}} {{endDateYear}}</div>
-                <div class="description pull-right">
-                  <h3>{{institution}}</h3>
-                  <div class="where">{{organization}}</div>
+        </div>
+
+      </div>
+      <div class="d-flex flex-column section">
+        {{#workBool}}
+        <!-- WORK EXPERIENCE -->
+        <div class="box">
+          <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
+          {{#work}}
+            <div class="job d-flex flex-column clearfix">
+              <div>
+                <div class="details">
+                  <div class="where">
+                    {{name}}
+                    {{#location}}
+                    <div class="float-end">
+                      {{location}}
+                    </div>
+                    {{/location}}
+                  </div>
+                  {{#description}}
+                  <div class="description">
+                    {{description}}
+                  </div>
+                  {{/description}}
                   {{#url}}
                   <div class="address">
                     <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
                   </div>
                   {{/url}}
-                  {{#studyType}}<p><i class= "fas fa-graduation-cap ico"></i> {{studyType}}</p>{{/studyType}}
-                  <p>{{area}}</p>
-                  {{#score}}
-                  <p>
-                    Grade: {{score}}
-                  </p>
-                  {{/score}}
-                  {{#educationCourses}}
-                    <div>Courses</div>
-                    <ul class="list-group">
-                      {{#courses}}
-                      <li class="list-group-item">{{{.}}}</li>
-                      {{/courses}}
-                    </ul>
-                  {{/educationCourses}}
+                  <div class="year">{{startDateMonth}}{{startDateYear}} – {{endDateMonth}}{{endDateYear}}</div>
                 </div>
-              </li>
-              {{/education}}
-            </ul>
-          </div>
-          {{/educationBool}}
+              </div>
+              <div>
+                <div class="job-details col-xs-11">
+                  <div class="profession">{{position}}</div>
+                  <div class="description">
+                    {{{summary}}}
+                    {{#boolHighlights}}
+                    <div class="highlights">Highlights</div>
+                    <ul class="list-group">
+                      {{#highlights}}
+                      <li class="list-group-item">{{{.}}}</li>
+                      {{/highlights}}
+                    </ul>
+                    {{/boolHighlights}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/work}}
+        </div>
+        {{/workBool}}
+        <div class="col-xs-12 section">
           {{#skillsBool}}
           <!-- SKILLS -->
           <div class="box">
             <h2><i class="fas fa-tasks ico"></i> Skills</h2>
+            <div class="skills">
             {{#skills}}
-            <div class="skills clearfix">
-              <div class="item-skills">
-                  {{name}}
-                  {{#level}}<span class="skill-level">{{level}}</span>{{/level}}
+              <div class="clearfix">
+                <div class="item-skills">
+                    {{name}}
+                    {{#level}}<span class="skill-level">{{level}}</span>{{/level}}
+                </div>
+                <div class="d-flex flex-wrap gap clearfix">
+                  {{#keywords}}
+                  <span class= "skill badge">{{{.}}}</span>
+                  {{/keywords}}
+                </div>
               </div>
-              <div class="col-sm-offset-1 col-sm-12 clearfix">
-                {{#keywords}}
-                <span class= "skill badge">{{{.}}}</span>
-                {{/keywords}}
-              </div>
-            </div>
             {{/skills}}
+            </div>
           </div>
           {{/skillsBool}}
-          {{#publicationsBool}}
-          <!-- PUBLICATIONS -->
-          <div class="box">
-            <h2><i class="fas fa-book ico"></i> Publications</h2>
-            {{#publications}}
-            <div class="publication panel panel-default">
-              <div class="panel-heading">
-                <div class="name panel-title">{{name}}</div>
-              </div>
-              <div class="panel-body">
-                {{#publisher}}
-                <div class="publisher"><i class= "fas fa-bookmark ico"></i> {{publisher}}</div>
-                {{/publisher}}
-                <div class="year">{{day}} {{month}} {{year}}</div>
-                {{#url}}
-                <div class="address">
-                  <a href="{{url}}" target= "_blank"><i class="fas fa-globe ico"></i> {{url}}</a>
-                </div>
-                {{/url}}
-                {{#summary}}
-                <p>{{{summary}}}</p>
-                {{/summary}}
-              </div>
-            </div>
-            {{/publications}}
-          </div>
-          {{/publicationsBool}}
-          {{#languagesBool}}
-          <!-- LANGUAGES -->
-          <div class="box">
-            <h2><i class="fas fa-language ico"></i> Languages</h2>
-            <ul class="list-group">
-              {{#languages}}
-              <li class=" list-group-item">{{language}}<span class="skill badge pull-right">{{fluency}}</span></li>
-              {{/languages}}
-            </ul>
-          </div>
-          {{/languagesBool}}
-          {{#interestsBool}}
+          {{#certificatesBool}}
           <!-- HOBBIES -->
-          <div class="box">
-            <h2><i class="fas fa-heart ico"></i> Interests</h2>
-            {{#interests}}
-            <div class="interests clearfix">
-              <div class="item-interests">
-                  {{name}}
+          <div class="box section">
+            <h2><i class="fas fa-certificate ico"></i> Certificates</h2>
+            {{#certificates}}
+            <div class="certificates clearfix d-flex flex-column">
+              <div class="item-certificates">
+                  <i class= "fas fa-cloud ico"></i> {{issuer}}
               </div>
-              <div class="col-sm-offset-1 col-sm-12 clearfix">
-                {{#keywords}}
-                <span class= "interest badge">{{{.}}}</span>
-                {{/keywords}}
+              <div class="certificate-name">
+                <a href="{{url}}" target= "_blank"> {{name}}</a>
               </div>
             </div>
-            {{/interests}}
+            {{/certificates}}
           </div>
-          {{/interestsBool}}
-          {{#referencesBool}}
-          <div class="box">
-            <h2><i class= "fas fa-check-square ico"></i> References</h2>
-            {{#references}}
-            <blockquote>
-              <div>{{{reference}}}</div>
-              <footer>
-                <a href="{{url}}" target= "_blank">{{name}}</a>
-              </footer>
-            </blockquote><br>
-            {{/references}}
-          </div>
-          {{/referencesBool}}
+          {{/certificatesBool}}
         </div>
       </div>
     </div>

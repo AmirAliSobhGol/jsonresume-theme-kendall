@@ -7,7 +7,7 @@
 @viewport           { width: device-width; }
 
 body{
-  font-family: 'Open Sans', Arial, Tahoma;
+  font-family: 'Open Sans', Arial, Tahoma !important;
   font-weight: 400;
   color: #363636;
   background: #334960;
@@ -19,32 +19,14 @@ blockquote {
 .container{
   margin-top: 80px;
   margin-bottom: 15px;
-  background: #fff;
+  background: #fff !important;
 }
 
-#photo-header{
-  margin-top: -75px;
-}
-#photo{
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  overflow: hidden;
-  padding: 5px;
-  background: #334960;
-  display: inline-block;
-}
-#photo img{
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
 #text-header h3{
   margin: 0;
   padding: 0;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 500;
-  letter-spacing: -1px;
 }
 #text-header h3::first-line{
   font-size: 1.2em;
@@ -52,7 +34,7 @@ blockquote {
   line-height: 1.5em;
 }
 #text-header h3 span{
-  color: #334960;
+  color: #334960 !important;
   opacity: 0.7;
 }
 #text-header h3 sup{
@@ -61,18 +43,21 @@ blockquote {
 #text-header:after{
   width: 100%;
   height: 3px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd !important;
   margin-top: 15px;
   content: '';
   display: block;
 }
 
 .box{
+  padding-bottom: 10px;
+  margin-bottom: 25px;
 }
 .box h2{
-  color: #227c74;
+  color: #227c74 !important;
   font-size: 1.5em;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 #awards,
@@ -92,13 +77,13 @@ blockquote {
   top: 0;
   content: ' ';
   display: block;
-  background: #32475c;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #32475c 7%, #32475c 89%, #ffffff 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#32475c), color-stop(89%,#32475c), color-stop(100%,#ffffff));
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: -o-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: -ms-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
-  background: linear-gradient(to bottom,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%);
+  background: #32475c !important;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #32475c 7%, #32475c 89%, #ffffff 100%) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#32475c), color-stop(89%,#32475c), color-stop(100%,#ffffff)) !important;
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%) !important;
+  background: -o-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%) !important;
+  background: -ms-linear-gradient(top,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%) !important;
+  background: linear-gradient(to bottom,  #ffffff 0%,#32475c 7%,#32475c 89%,#ffffff 100%) !important;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 }
 #awards li,
@@ -111,7 +96,7 @@ blockquote {
 #awards .year,
 #education .year{
   width: 14%;
-  background: #fff;
+  background: #fff !important;
   padding: 10px;
   font-weight: 700;
   display: inline-block;
@@ -120,12 +105,12 @@ blockquote {
 #education .description{
   width: 83%;
   display: inline-block;
-  background: #eee;
+  background: #eee !important;
   margin-bottom: 10px;
   position: relative;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc !important;
+  border-right: 1px solid #ccc !important;
 }
 #awards .description:after,
 #education .description:after {
@@ -136,9 +121,9 @@ blockquote {
   left: -16px;
   height: 0;
   width: 0;
-  border: solid transparent;
-  border-right-color: #eee;
-  border-width: 8px;
+  border: solid transparent !important;
+  border-right-color: #eee !important;
+  border-width: 8px !important;
   pointer-events: none;
 }
 #awards .description h3,
@@ -158,12 +143,13 @@ blockquote {
   margin-bottom: 15px;
 }
 .job .details {
+  margin-left: 2%;
+  width: 95%;
   padding: 10px;
-  width: 100%;
   margin-bottom: 10px;
-  background: #eee;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  background: #eee !important;
+  border-bottom: 1px solid #ccc !important;
+  border-right: 1px solid #ccc !important;
 }
 .job .where{
   font-size: 1.2em;
@@ -184,6 +170,8 @@ blockquote {
   font-weight: bold;
 }
 .job .job-details {
+  padding-left: 3%;
+  width: 100%;
 }
 .publication {
   margin-bottom: 0;
@@ -200,28 +188,23 @@ blockquote {
   padding-top: 10px;
 }
 
-.section {
-  margin-top: 1.2em;
-}
-
-.gap {
-  gap: 0.5em;
-}
-
 .contact-item{
+  width: 100%;
   float: left;
 }
 .contact-item .icon{
   padding: 10px;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  color: #32475c;
-  background: #eee;
+  border-right: 1px solid #ccc !important;
+  border-bottom: 1px solid #ccc !important;
+  color: #32475c !important;
+  background: #eee !important;
 }
 .contact-item:last-child .icon{
-  border-bottom: none;
+  border-bottom: none !important;
 }
 .contact-item .title{
+  width: 80%;
+  width: calc(100% - 55px);
   font-weight: 700;
   opacity: 0.9;
 }
@@ -229,62 +212,46 @@ blockquote {
   margin-top: 10px;
 }
 .contact-item .description{
-  color: #334960;
-}
-
-.skills {
-  margin-top: 10px;
-  display: grid;  
-  gap: 1em;
-  grid-template-columns: auto auto auto;
-}
-
-.certificate-name {
-  font-size: .85em;
-}
-
-.item-certificates {
-  height: 30px;
-  color: #334960;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 1.1em;
-  font-weight: 600;
+  width: 80%;
+  width: calc(100% - 55px);
+  color: #334960 !important;
 }
 
 .item-interests,
 .item-skills{
   height: 30px;
-  color: #334960;
+  color: #334960 !important;
+  padding: 5px 10px;
   margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 1.1em;
   font-weight: 600;
 }
 .interest,
 .skill{
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 5px;
   padding: 5px 10px;
-  background: #32475c;
+  background: #32475c !important;
   position: relative;
   font-size: .85em;
 }
 .skill-level {
-  background-color: #227c74;
-  border-radius: 4px;
-  color: #fff;
+  background-color: #227c74 !important;
+  border-radius: 4px !important;
+  color: #fff !important;
   padding: 1px 8px;
-  font-size: .70em;
+  font-size: .75em;
+  position: absolute;
   margin: 1px 10px;
 }
 
 #language-skills .skill{
   margin: 10px 0;
   padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee !important;
 }

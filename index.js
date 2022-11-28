@@ -47,6 +47,9 @@ function render(resumeObject) {
     }
     if (resumeObject.basics.image || resumeObject.basics.gravatar) {
         resumeObject.photo = resumeObject.basics.image ? resumeObject.basics.image : resumeObject.basics.gravatar;
+        resumeObject.photoBool = true;
+    } else {
+        resumeObject.photoBool = false;
     }
 
     _.each(resumeObject.basics.profiles, function(p){
@@ -194,6 +197,12 @@ function render(resumeObject) {
         }
     }
 
+    if (resumeObject.certificates && resumeObject.certificates.length) {
+        if (resumeObject.certificates[0].name) {
+            resumeObject.certificatesBool = true;
+        }
+    }
+
     if (resumeObject.awards && resumeObject.awards.length) {
         if (resumeObject.awards[0].title) {
             resumeObject.awardsBool = true;
@@ -219,6 +228,7 @@ function render(resumeObject) {
     if (resumeObject.skills && resumeObject.skills.length) {
         if (resumeObject.skills[0].name) {
             resumeObject.skillsBool = true;
+            resumeObject.skills.sort((a, b) => b.keywords.length - a.keywords.length)
         }
     }
 
