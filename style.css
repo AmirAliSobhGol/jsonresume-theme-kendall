@@ -69,6 +69,7 @@ blockquote {
 
 .box{
 }
+
 .box h2{
   color: #227c74;
   font-size: 1.5em;
@@ -179,11 +180,15 @@ blockquote {
 .job .description{
   line-height: 1.5em;
 }
+.job .highlight-section {
+  page-break-inside: avoid;
+}
 .job .highlights{
   padding: 5px 0;
   font-weight: bold;
 }
 .job .job-details {
+  padding-left: 4px;
 }
 .publication {
   margin-bottom: 0;
@@ -234,6 +239,7 @@ blockquote {
 
 .skills {
   margin-top: 10px;
+  padding-left: 4px;
   display: grid;  
   gap: 1em;
   grid-template-columns: auto auto auto;
@@ -243,10 +249,17 @@ blockquote {
   font-size: .85em;
 }
 
+.certificates {
+  padding-left: 4px;
+}
+
+.item-dage {
+  page-break-inside: avoid;
+}
+
 .item-certificates {
   height: 30px;
   color: #334960;
-  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   font-size: 1.1em;
@@ -257,7 +270,7 @@ blockquote {
 .item-skills{
   height: 30px;
   color: #334960;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   white-space: nowrap;
   overflow: hidden;
   font-size: 1.1em;

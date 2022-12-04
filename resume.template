@@ -81,7 +81,7 @@
         <div class="box">
           <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
           {{#work}}
-            <div class="job d-flex flex-column clearfix">
+            <div class="job clearfix">
               <div>
                 <div class="details">
                   <div class="where">
@@ -111,13 +111,15 @@
                   <div class="description">
                     {{{summary}}}
                     {{#boolHighlights}}
-                    <div class="highlights">Highlights</div>
-                    <ul class="list-group">
-                      {{#highlights}}
-                      <li class="list-group-item">{{{.}}}</li>
-                      {{/highlights}}
-                    </ul>
-                    {{/boolHighlights}}
+                    <div class="highlight-section">
+                      <div class="highlights">Highlights</div>
+                      <ul class="list-group">
+                        {{#highlights}}
+                        <li class="list-group-item">{{{.}}}</li>
+                        {{/highlights}}
+                      </ul>
+                      {{/boolHighlights}}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -137,7 +139,7 @@
                     {{name}}
                     {{#level}}<span class="skill-level">{{level}}</span>{{/level}}
                 </div>
-                <div class="d-flex flex-wrap gap clearfix">
+                <div class="item-badge clearfix">
                   {{#keywords}}
                   <span class= "skill badge">{{{.}}}</span>
                   {{/keywords}}
