@@ -250,6 +250,9 @@ blockquote {
 }
 
 .certificates {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: auto auto;
   padding-left: 4px;
 }
 
